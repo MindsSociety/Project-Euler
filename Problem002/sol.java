@@ -8,27 +8,21 @@
  * whose values do not exceed four million, find the sum of the even-valued
  * terms.
  */
-public class PE002_Even_Fibonacci_numbers {
+public class sol {
 	public static void main(String[] args) {
-		long start = System.nanoTime();
-
-		int fib1 = 0, fib2 = 0, current = 0;
+		int fib1 = 0, fib2 = 0, result = 0;
 		
 		for (int num2 = 0, num1 = 1; num1 < 4000000 || num2 < 4000000; num2 += num1) {
 			num1 += num2;
 			fib1 = num2 % 2;
 			fib2 = num1 % 2;
 			if (fib1 == 0) {
-				current += num2;
+				result += num2;
 			} else if (fib2 == 0) {
-				current += num1;
+				result += num1;
 			}
 		}
 
-		long end = System.nanoTime();
-		long runtime = end - start;
-		System.out.println(current);
-		System.out.println("Runtime: " + runtime / 1000000 + "ms (" + runtime
-				+ "ns)");
+		System.out.println(result);
 	}
 }
