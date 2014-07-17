@@ -6,29 +6,21 @@
  * to 10 without any remainder. What is the smallest positive number that is
  * evenly divisible by all of the numbers from 1 to 20?
  */
-public class PE005_Smallest_multiple {
+public class sol {
 	public static void main(String[] args) {
-		long start = System.nanoTime();
-
 		boolean found = false;
-		int check = 1;
+		int result = 1;
+
 		while (!found) {
-			check++;
-			if (check % 1 == 0 && check % 2 == 0 && check % 3 == 0
-					&& check % 4 == 0 && check % 5 == 0 && check % 6 == 0
-					&& check % 7 == 0 && check % 8 == 0 && check % 9 == 0
-					&& check % 10 == 0 && check % 11 == 0 && check % 12 == 0
-					&& check % 13 == 0 && check % 14 == 0 && check % 15 == 0
-					&& check % 16 == 0 && check % 17 == 0 && check % 18 == 0
-					&& check % 19 == 0 && check % 20 == 0) {
-				System.out.println(check);
+			result++;
+
+			if (result % 11 == 0 && result % 12 == 0 && result % 13 == 0
+					&& result % 14 == 0 && result % 15 == 0 && result % 16 == 0
+					&& result % 17 == 0 && result % 18 == 0 && result % 19 == 0
+					&& result % 20 == 0) {
+				System.out.println(result);
 				found = true;
 			}
 		}
-
-		long end = System.nanoTime();
-		long runtime = end - start;
-		System.out.println("Runtime: " + runtime / 1000000 + "ms (" + runtime
-				+ "ns)");
 	}
 }
