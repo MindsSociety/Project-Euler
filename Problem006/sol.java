@@ -9,23 +9,16 @@
  * 2640. Find the difference between the sum of the squares of the first one
  * hundred natural numbers and the square of the sum.
  */
-public class PE006_Sum_square_difference {
+public class sol {
 	public static void main(String[] args) {
-		long start = System.nanoTime();
-		
 		int sumSquare = (100 * 101 * 201) / 6;
-		int result = 0, sum = 0, squareSum = 0;
+		int sum = 0, squareSum = 0;
 		
 		for (int i = 0; i <= 100; i++) {
 			sum += i;
 			squareSum = sum * sum;
 		}
-		result = squareSum - sumSquare;
 		
-		long end = System.nanoTime();
-		long runtime = end - start;
-		System.out.println(result);
-		System.out.println("Runtime: " + runtime / 1000000 + "ms (" + runtime
-				+ "ns)");
+		System.out.println((squareSum - sumSquare));
 	}
 }
