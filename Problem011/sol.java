@@ -28,7 +28,7 @@
  * greatest product of four adjacent numbers in the same direction (up, down,
  * left, right, or diagonally) in the 20×20 grid?
  */
-public class PE011_Largest_product_in_a_grid {
+public class sol {
 	public static void main(String[] args) {
 		int[][] mat = {
 				{ 8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50,
