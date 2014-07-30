@@ -10,7 +10,7 @@
  * the first triangle number to have over five divisors. What is the value of
  * the first triangle number to have over five hundred divisors?
  */
-public class PE012_Highly_divisible_triangular_number {
+public class sol {
 	private static int result;
 	
 	public static void main(String[] args) {
