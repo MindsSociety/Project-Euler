@@ -13,27 +13,24 @@
  */
 public class PE014_Longest_Collatz_sequence {
 	public static void main(String[] args) {
-		long start = System.nanoTime();
-
 		long a;
 		int j, max = 0, result = 0;
+		
 		for (int i = 1; i < 1000000; i++) {
 			a = i;
 			j = 1;
+			
 			while (a != 1) {
 				a = ((a & 1) == 1) ? (3 * a + 1) : (a >> 1);
 				j++;
 			}
+			
 			if (j > max) {
 				max = j;
 				result = i;
 			}
 		}
 
-		long end = System.nanoTime();
-		long runtime = end - start;
 		System.out.println(result);
-		System.out.println("Runtime: " + runtime / 1000000 + "ms (" + runtime
-				+ "ns)");
 	}
 }
