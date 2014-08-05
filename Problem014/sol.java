@@ -11,7 +11,7 @@
  * starting number, under one million, produces the longest chain? NOTE: Once
  * the chain starts the terms are allowed to go above one million.
  */
-public class PE014_Longest_Collatz_sequence {
+public class sol {
 	public static void main(String[] args) {
 		long a;
 		int j, max = 0, result = 0;
