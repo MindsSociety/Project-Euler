@@ -10,11 +10,10 @@
  * hundred and fifteen) contains 20 letters. The use of "and" when writing out
  * numbers is in compliance with British usage.
  */
-public class PE017_Number_letter_counts {
+public class sol {
 	public static void main(String[] args) {
-		long start = System.nanoTime();
-
 		int result = 0;
+		
 		int oneToNine = "onetwothreefourfivesixseveneightnine".length();
 		int tenToNineteen = "teneleventwelvethirteenfourteenfifteensixteen_seventeeneighteennineteen"
 				.length();
@@ -23,14 +22,11 @@ public class PE017_Number_letter_counts {
 				.length();
 		int hundred = "hundred".length();
 		int thousand = "thousand".length();
+		
 		result = "one".length() + thousand + 900 * hundred + 100 * oneToNine
 				+ 100 * twentyToNinety + 891 * and + 80 * oneToNine + 10
 				* (oneToNine + tenToNineteen);
 
-		long end = System.nanoTime();
-		long runtime = end - start;
 		System.out.println(result);
-		System.out.println("Runtime: " + runtime / 1000000 + "ms (" + runtime
-				+ "ns)");
 	}
 }
