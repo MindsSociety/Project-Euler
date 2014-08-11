@@ -38,10 +38,8 @@ import java.util.Vector;
  * triangle containing one-hundred rows; it cannot be solved by brute force, and
  * requires a clever method! ;o)
  */
-public class PE018_Maximum_path_sum_I {
+public class sol {
 	public static void main(String[] args) {
-		long start = System.nanoTime();
-
 		Vector<Integer> v = new Vector<Integer>();
 		int arr[] = { 75, 95, 64, 17, 47, 82, 18, 35, 87, 10, 20, 4, 82, 47,
 				65, 19, 1, 23, 75, 03, 34, 88, 2, 77, 73, 7, 63, 67, 99, 65, 4,
@@ -69,12 +67,14 @@ public class PE018_Maximum_path_sum_I {
 
 			// Find parents
 			parentLeftIndex = i - currentRow;
+			
 			if (parentLeftIndex >= 0 && parentLeftIndex != i && numCount > 1) {
 				parentLeftSum = ((Integer) v.elementAt(parentLeftIndex))
 						.intValue() + arr[i];
 			}
 
 			parentRightIndex = i - (currentRow - 1);
+			
 			if (parentRightIndex >= 0 && parentRightIndex != i
 					&& (numCount != (last + 1))) {
 				parentRightSum = ((Integer) v.elementAt(parentRightIndex))
@@ -93,6 +93,7 @@ public class PE018_Maximum_path_sum_I {
 				last = numCount;
 				numCount = 0;
 			}
+			
 			numCount++;
 		}
 
@@ -104,6 +105,7 @@ public class PE018_Maximum_path_sum_I {
 
 		while (it.hasNext()) {
 			current = ((Integer) it.next()).intValue();
+			
 			if (current > result) {
 				result = current;
 			}
@@ -112,13 +114,10 @@ public class PE018_Maximum_path_sum_I {
 				last = colCount;
 				colCount = 0;
 			}
+			
 			colCount++;
 		}
 
-		long end = System.nanoTime();
-		long runtime = end - start;
 		System.out.println(result);
-		System.out.println("Runtime: " + runtime / 1000000 + "ms (" + runtime
-				+ "ns)");
 	}
 }
