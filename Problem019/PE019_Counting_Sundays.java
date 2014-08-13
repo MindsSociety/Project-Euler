@@ -18,8 +18,6 @@ import java.util.GregorianCalendar;
  */
 public class PE019_Counting_Sundays {
 	public static void main(String [] args) {
-		long start = System.nanoTime();
-
 		Calendar startDate = GregorianCalendar.getInstance();
 		startDate.set(Calendar.DATE, 1);
 		startDate.set(Calendar.MONTH, Calendar.JANUARY);
@@ -31,18 +29,16 @@ public class PE019_Counting_Sundays {
 		endDate.set(Calendar.YEAR, 2000);
 
 		int result = 0;
+		
 		while (startDate.before(endDate)) {
 			if (startDate.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY
 					&& startDate.get(Calendar.DAY_OF_MONTH) == 1) {
 				result++;
 			}
+			
 			startDate.add(Calendar.MONTH, 1);
 		}
 
-		long end = System.nanoTime();
-		long runtime = end - start;
 		System.out.println(result);
-		System.out.println("Runtime: " + runtime / 1000000 + "ms (" + runtime
-				+ "ns)");
 	}
 }
