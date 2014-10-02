@@ -1,5 +1,3 @@
-package Solved_026_050;
-
 /**
  * Quadratic primes
  * Problem 27
