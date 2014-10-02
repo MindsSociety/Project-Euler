@@ -26,19 +26,19 @@ import java.util.regex.Pattern;
  * Find the value of d < 1000 for which 1/d contains the longest recurring cycle
  * in its decimal fraction part.
  */
-public class PE026_Reciprocal_cycles {
+public class sol {
 	public static void main(String[] args) {
 		MathContext mc = new MathContext(4000);
 		Pattern pattern = Pattern.compile("\\Q0.\\E"
 				+ "[\\d]*?([\\d]{8,}?)(\\1{2,}?)" + "[\\d]*?");
-
-		int max = 0;
-		int result = 0;
+		int max = 0, result = 0;
+		
 		for (int i = 2; i < 1000; i++) {
 			BigDecimal numerator = new BigDecimal("1", mc);
 			BigDecimal denominator = new BigDecimal(String.valueOf(i), mc);
 			String str = numerator.divide(denominator, mc).toString();
 			Matcher matcher = pattern.matcher(str);
+			
 			if (matcher.find()) {
 				if (matcher.group(1).length() > max) {
 					max = matcher.group(1).length();
